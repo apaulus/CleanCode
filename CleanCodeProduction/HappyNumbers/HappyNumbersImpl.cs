@@ -12,20 +12,20 @@ namespace CleanCodeProduction.HappyNumbers
 
         private bool IsHappyRecursive(ICollection<int> numbersSeen)
         {
-            var happyness = CalculateHappynessValue(numbersSeen.Last());
+            var happiness = CalculateHappinessValue(numbersSeen.Last());
             
-            if (numbersSeen.Contains(happyness))
+            if (numbersSeen.Contains(happiness))
                 return false;
 
-            if (happyness == 1)
+            if (happiness == 1)
                 return true;
             
-            numbersSeen.Add(happyness);
+            numbersSeen.Add(happiness);
 
             return IsHappyRecursive(numbersSeen);
         }
 
-        private int CalculateHappynessValue(in int number)
+        private int CalculateHappinessValue(in int number)
         {
             return number
                 .ToString()

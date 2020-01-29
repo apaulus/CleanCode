@@ -5,17 +5,17 @@ namespace CleanCodeProduction.RomanNumbers
 {
     public static class RomanNumbersImpl
     {
-        public static int RomanNumberToInt(string roman)
+        public static int RomanNumberToIntBad(string roman)
         {
             return Sum(Negate(Map(roman)));
         }
-
-        public static int Sum(IEnumerable<int> numbers)
+        
+        private static int Sum(IEnumerable<int> numbers)
         {
             return numbers.Sum();
         }
 
-        public static int[] Negate(int[] numbers)
+        private static int[] Negate(int[] numbers)
         {
             for (var i = 0; i < numbers.Length - 1; i++)
             {
@@ -29,7 +29,7 @@ namespace CleanCodeProduction.RomanNumbers
         }
         
         
-        public static int[] Map(string romanString)
+        private static int[] Map(string romanString)
         {
             var mapping = new Dictionary<char, int>
             {
