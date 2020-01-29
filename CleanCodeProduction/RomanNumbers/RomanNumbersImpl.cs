@@ -5,7 +5,7 @@ namespace CleanCodeProduction.RomanNumbers
 {
     public static class RomanNumbersImpl
     {
-        public static int RomanNumberToIntBad(string roman)
+        public static int RomanNumberToInt(string roman)
         {
             return Sum(Negate(Map(roman)));
         }
